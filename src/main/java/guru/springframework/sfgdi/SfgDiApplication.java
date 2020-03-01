@@ -3,6 +3,7 @@ package guru.springframework.sfgdi;
 import guru.springframework.sfgdi.controllers.ConstructorInjectedController;
 import guru.springframework.sfgdi.controllers.I18nController;
 import guru.springframework.sfgdi.controllers.MyController;
+import guru.springframework.sfgdi.controllers.PetController;
 import guru.springframework.sfgdi.controllers.PropertyInjectedController;
 import guru.springframework.sfgdi.controllers.SetterInjectingController;
 import org.springframework.boot.SpringApplication;
@@ -33,6 +34,9 @@ public class SfgDiApplication {
 
 		I18nController i18nController = (I18nController)context.getBean("i18nController");
 		System.out.println(i18nController.greet());
+
+		PetController petController = (PetController)context.getBean("petController");
+		System.out.println("Best pet: " + petController.whichIsTheBest());
 	}
 
 }
